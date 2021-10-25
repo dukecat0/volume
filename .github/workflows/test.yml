@@ -17,5 +17,5 @@ jobs:
       run: swift build
 
     - name: Test
-      run: ./.build/debug/volume
+      run: ./.build/debug/volume --help
 
