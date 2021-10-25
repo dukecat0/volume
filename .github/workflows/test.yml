@@ -21,6 +21,7 @@ jobs:
       
     - name: Test from release
       run: |
+       brew install mint
        mint install meowmeowmeowcat/volume@v0.0.1
-       mint run meowmeowmeowcat/volume@v0.0.1 50
+       mint run meowmeowmeowcat/volume@v0.0.1 --help
 
