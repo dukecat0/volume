@@ -18,4 +18,9 @@ jobs:
 
     - name: Test
       run: ./.build/debug/volume --help
+      
+    - name: Test from release
+      run: |
+       mint install meowmeowmeowcat/volume@v0.0.1
+       mint run meowmeowmeowcat/volume@v0.0.1 50
 
