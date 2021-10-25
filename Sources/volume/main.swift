@@ -1,7 +1,11 @@
 import Foundation
 import ArgumentParser
 
-struct Volume: ParsableArguments {
+struct Volume: ParsableCommand {
+    static var configuration = CommandConfiguration(
+        abstract: "Adjust the volume from the terminal.",
+        version: "0.0.1"
+    )
     @Argument(help: "Input a number(0-100) to adjuct the volume.")
     var number: String
 }
