@@ -6,7 +6,7 @@ struct Volume: ParsableCommand {
         abstract: "Adjust the volume from the terminal.",
         version: "0.0.1"
     )
-    @Argument(help: "Input a number(0-100) to adjuct the volume.")
+    @Argument(help: "Input a number(0-100) to adjuct the volume.\nDefault to output volume.")
     var option: String
 
     @Flag(help: "Set input volume.")
