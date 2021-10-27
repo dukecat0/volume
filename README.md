@@ -1,6 +1,6 @@
 # volume
 
-Adjust the volume from the terminal on macOS.
+Adjust the volume from the command line on macOS.
 
 ## Installation
 
