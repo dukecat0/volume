@@ -17,6 +17,9 @@ struct Volume: ParsableCommand {
 
 }
 
+let blue = "\u{001B}[0;34m"
+let red = "\u{001B}[0;31m"
+
 let option = Volume.parseOrExit()
 var type: String
 
@@ -36,9 +39,9 @@ func run(_ source: String) {
     if let scriptObject = NSAppleScript(source: source) {
         scriptObject.executeAndReturnError(&error)
         if (error != nil) {
-            print("Error: \(String(describing: error))")
+            print("\(red)Error: \(String(describing: error)))")
         } else {
-            print("Your \(type) volume is \(option.option) now.")
+            print("\(blue)Your \(type) volume is \(option.option) now.")
         }
     }
 }
