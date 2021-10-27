@@ -21,3 +21,10 @@ OPTIONS:
   --version               Show the version.
   -h, --help              Show help information.
 ```
+
+## Example
+
+Set the output volume to 10:
+```shell
+$ volume 10
+```
