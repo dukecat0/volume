@@ -54,9 +54,11 @@ switch argument.first {
     case "--version",
          "-v":
         print(version)
+        exit(0)
     case "--help",
         "-h":
         print(help_msg)
+        exit(0)
     case "--input",
          "-i":
         type = "input"
