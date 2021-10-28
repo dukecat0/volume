@@ -33,7 +33,7 @@ if CommandLine.arguments.count < 1 {
     exit(1)
 } else if CommandLine.arguments.count == 1 {
     print(help_msg)
-    exit(1)
+    exit(0)
 }
 
 var type: String = ""
