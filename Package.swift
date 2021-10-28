@@ -8,13 +8,9 @@ let package = Package(
     products: [
         .executable(name: "volume", targets: ["volume"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.1")
-    ],
+    dependencies: [],
     targets: [
         .target(name: "volume",
-        dependencies: [
-            .product(name: "ArgumentParser", package: "swift-argument-parser")
-            ]),
+        dependencies: []),
     ]
 )
