@@ -4,6 +4,12 @@ Adjust the volume from the command line on macOS.
 
 ## Installation
 
+Using [Homebrew](https://brew.sh):
+```shell
+brew tap meowmeowmeowcat/taps
+brew install meowmeowmeowcat/taps/volume
+```
+
 Using [Mint](https://github.com/yonaskolb/Mint):
 ```shell
 mint install meowmeowmeowcat/volume@v0.0.1
