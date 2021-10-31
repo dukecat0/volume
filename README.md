@@ -72,6 +72,7 @@ Set all volume(including output, input and alert volume) to 50:
 $ volume --all 50
 ```
 
+## Notes
 If you want to adjust the volume from the command line faster, using `alias` would be a good choice:
 
 ```shell
