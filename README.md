@@ -15,6 +15,11 @@ Using [Mint](https://github.com/yonaskolb/Mint):
 mint install meowmeowmeowcat/volume@v0.0.2
 ```
 
+Install manually:
+
+1. Download the release from the [release page](https://github.com/meowmeowmeowcat/volume/releases/tag/v0.0.2)
+2. Add it to the PATH
+
 ## Usage
 
 ```shell
