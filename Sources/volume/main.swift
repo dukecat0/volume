@@ -9,10 +9,10 @@ let version = "0.0.1"
 let help_msg = """
 OVERVIEW: Adjust the volume from the terminal.
 
-USAGE: volume <number> [--input] [--alert] [--all]
+USAGE: volume [--input] [--alert] [--all] <value>
 
 ARGUMENTS:
-  <number>                Input a number(0-100) to adjuct the volume.
+  <value>                 Input a value(0-100) to adjuct the volume.
                           Default to output volume.
 
 OPTIONS:
@@ -75,9 +75,7 @@ switch argument.first {
         arg = argument[0]
 }
 
-if type == "" {
-    exit(1)
-} else if !isStringAnInt(arg) {
+if !isStringAnInt(arg) {
     print("\(red)Incorrect arguments! See --help for more info.\(reset)")
     exit(1)
 }
