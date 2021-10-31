@@ -9,10 +9,11 @@ let version = "0.0.1"
 let help_msg = """
 OVERVIEW: Adjust the volume from the terminal.
 
-USAGE: volume [--input] [--alert] [--all] <value>
+USAGE: volume [--input] [--alert] [--all] <up|down|value>
 
 ARGUMENTS:
-  <value>                 Input a value(0-100) to adjuct the volume.
+  <up|down|value>         Use up or down to increase or decrease the volume.
+                          Input a value(0-100) to adjuct the volume.
                           Default to output volume.
 
 OPTIONS:
@@ -38,6 +39,7 @@ if CommandLine.arguments.count < 1 {
 
 var type: String = ""
 var arg: String = ""
+var error: NSDictionary?
 
 if CommandLine.arguments.count == 2 && argument.first == "--input" || argument.first == "-i" {
     print("\(red)Incorrect arguments! Maybe --input <number>? See --help for more info.\(reset)")
@@ -70,6 +72,12 @@ switch argument.first {
     case "--all":
         type = "all"
         arg = argument[1]
+    case "up":
+        type = "up"
+        arg = "0"
+    case "down":
+        type = "down"
+        arg = "0"
     default:
         type = "output"
         arg = argument[0]
@@ -87,10 +95,22 @@ if type == "all" {
         set volume output volume \(arg)
         set volume input volume \(arg)
         set volume alert volume \(arg)
+        """
+} else if type == "up" {
+    script = """
+        set Outputvol to output volume of (get volume settings)
+        set volume output volume (Outputvol + 6.25)
+        """
+} else if type == "down" {
+    script = """
+    set Outputvol to output volume of (get volume settings)
+    set volume output volume (Outputvol - 6.25)
     """
 }
 
-var error: NSDictionary?
+var normal_msg: String = "\(blue)Your \(type) volume is \(arg) now.\(reset)"
+let increased_msg: String = "Your volume has been increased!"
+let decreased_msg: String = "Your volume has been decreased!"
 
 func run(_ source: String) {
     if let scriptObject = NSAppleScript(source: source) {
@@ -98,7 +118,13 @@ func run(_ source: String) {
         if (error != nil) {
             print("\(red)Error: \(String(describing: error)))\(reset)")
         } else {
-            print("\(blue)Your \(type) volume is \(arg) now.\(reset)")
+            if type != "up" && type != "down" {
+                print(normal_msg)
+            } else if type == "up" {
+                print(increased_msg)
+            } else if type == "down" {
+                print(decreased_msg)
+            }
         }
     }
 }
