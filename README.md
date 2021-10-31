@@ -12,7 +12,7 @@ brew install meowmeowmeowcat/taps/volume
 
 Using [Mint](https://github.com/yonaskolb/Mint):
 ```shell
-mint install meowmeowmeowcat/volume@v0.0.1
+mint install meowmeowmeowcat/volume@v0.0.2
 ```
 
 ## Usage
