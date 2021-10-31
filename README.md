@@ -29,7 +29,7 @@ OPTIONS:
   -i, --input             Set input volume.
   -a, --alert             Set alert volume.
   --all                   Set all volumes to the same level.
-                          \(blue)Including output, input and alert volume.\(reset)
+                          Including output, input and alert volume.
   --version               Show the version.
   -h, --help              Show help information.
 ```
