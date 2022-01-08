@@ -81,5 +81,5 @@ $ volume --all 50
 If you want to adjust the volume from the command line faster, using `alias` would be a good choice:
 
 ```shell
-$ alias vol="volume"
+alias vol="volume"
 ```
