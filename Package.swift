@@ -11,6 +11,6 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "volume",
-        dependencies: []),
+        dependencies: [])
     ]
 )
