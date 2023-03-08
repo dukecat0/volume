@@ -17,7 +17,7 @@ jobs:
       run: swift build
 
     - name: Lint in allow_failures mode
-      run: swiftlint --fix && git diff && swiftlint || true
+      run: swiftlint --fix && git diff && swiftlint
 
     - name: Test
       run: ./.build/debug/volume --help
