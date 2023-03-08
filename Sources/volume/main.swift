@@ -115,7 +115,7 @@ let decreased_msg: String = "Your volume has been decreased!"
 func run(_ source: String) {
     if let scriptObject = NSAppleScript(source: source) {
         scriptObject.executeAndReturnError(&error)
-        if (error != nil) {
+        if error != nil {
             print("\(red)Error: \(String(describing: error)))\(reset)")
         } else {
             if type != "up" && type != "down" {
